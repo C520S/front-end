@@ -7,12 +7,13 @@ import { RedoOutlined } from "@ant-design/icons";
 import Header from "../Components/Header";
 
 const JourneyPage = () => {
+  //antd
   const { Content } = Layout;
   const { Search } = Input;
   const { Text } = Typography;
-
+  const pageSize = 15;
   const [journeyDataSource, setJourneyDataSource] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
 
   const [searchingValue, setSearchingValue] = useState("");
@@ -23,7 +24,6 @@ const JourneyPage = () => {
     const day = date.getDate().toString().padStart(2, "0");
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const year = date.getFullYear().toString();
-
     const formattedDate = `${day}/${month}/${year}`;
 
     return formattedDate;
@@ -38,6 +38,7 @@ const JourneyPage = () => {
     setSearchingValue(value);
   };
 
+  // fetch data from wtih Search API
   const fetchDataWithSearch = async (page, search) => {
     try {
       setLoading(true);
@@ -49,10 +50,11 @@ const JourneyPage = () => {
       const journeysData = dataFromApi.data.data.journeysData;
 
       const totalPages = dataFromApi.data.data.totalPages;
+      const totalPNumofData = totalPages * pageSize;
       setJourneyDataSource(journeysData);
-      setTotalPages(totalPages);
+      setTotal(totalPNumofData);
     } catch (error) {
-      alert("Please enter the name of the relevant departure station！");
+      alert("Please enter the name of the relevant departure station.");
     } finally {
       setLoading(false);
     }
@@ -71,8 +73,10 @@ const JourneyPage = () => {
       const journeysData = dataFromApi.data.data.journeysData;
 
       const totalPages = dataFromApi.data.data.totalPages;
+      const totalPNumofData = totalPages * pageSize;
       setJourneyDataSource(journeysData);
-      setTotalPages(totalPages);
+      console.log(totalPages);
+      setTotal(totalPNumofData);
     } catch (error) {
       alert(
         "We are sorry. The resource you are looking for was not found due to a server error."
@@ -87,7 +91,9 @@ const JourneyPage = () => {
     fetchRecords(1);
   }, []);
 
+  //Render page when searchingValue is updated
   useEffect(() => {
+    if (searchingValue === "") return;
     fetchDataWithSearch(1, searchingValue);
   }, [searchingValue]);
 
@@ -183,7 +189,7 @@ const JourneyPage = () => {
               </Button>
             </div>
           ) : (
-            <dib></dib>
+            <div></div>
           )}
           <Table
             loading={loading}
@@ -191,8 +197,8 @@ const JourneyPage = () => {
             dataSource={journeyDataSource}
             rowKey={(journeyDataSource) => journeyDataSource._id} // Add a unique key prop for each row
             pagination={{
-              pageSize: 15,
-              total: totalPages,
+              pageSize: pageSize,
+              total: total,
               showSizeChanger: false,
               onChange: (page) => {
                 searchingValue
