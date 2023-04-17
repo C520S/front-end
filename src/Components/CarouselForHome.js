@@ -9,18 +9,34 @@ import pandaBike4 from "../Images/pandaBike4.jpeg";
 const CarouselForHome = () => {
   return (
     <>
-      <Carousel autoplay dotPosition="top">
+      <Carousel autoplay dotPosition="top" autoplaySpeed={2000}>
         <div>
-          <Image src={pandaBike1} width={500}  style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }} />
+          <Image
+            src={pandaBike1}
+            width={350}
+            style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+          />
         </div>
         <div>
-          <Image src={pandaBike2} width={500} style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }} />
+          <Image
+            src={pandaBike2}
+            width={350}
+            style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+          />
         </div>
         <div>
-          <Image src={pandaBike3} width={500} style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}  />
+          <Image
+            src={pandaBike3}
+            width={350}
+            style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+          />
         </div>
         <div>
-          <Image src={pandaBike4} width={500} style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }} />
+          <Image
+            src={pandaBike4}
+            width={350}
+            style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+          />
         </div>
       </Carousel>
     </>

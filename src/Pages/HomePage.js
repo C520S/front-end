@@ -14,7 +14,7 @@ const HomePage = () => {
         <Header />
         <Divider style={{ borderStyle: "none", borderColor: "transparent" }} />
         <Content style={{ textAlign: "center" }}>
-          <div style={{ margin: "0 auto" }}>
+          <div style={{ margin: "0 auto", backgroundColor: "#f5f5f5" }}>
             <Title>Welcome to my Panda Helsinki Citybike website!</Title>
             <CarouselForHome />
             <Divider
@@ -22,7 +22,7 @@ const HomePage = () => {
             />
             <Paragraph
               ellipsis={{ rows: 5 }}
-              style={{ width: "70vw", margin: "0 auto" }}
+              style={{ width: "80vw", margin: "0 auto" }}
             >
               Welcome to our website, where you can find comprehensive data on
               bike-share trips in the Helsinki and Espoo area for the month of
