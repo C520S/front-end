@@ -5,7 +5,7 @@ import "antd/dist/reset.css";
 import { Layout, Divider, Table, Input, Button, Typography } from "antd";
 import { RedoOutlined } from "@ant-design/icons";
 import Header from "../Components/Header";
-import {useNavigate } from "react-router-dom";
+
 const JourneyPage = () => {
   //antd
   const { Content } = Layout;
@@ -13,7 +13,7 @@ const JourneyPage = () => {
   const { Text } = Typography;
   const pageSize = 15;
 
-  const navigate = useNavigate()
+  
   const [journeyDataSource, setJourneyDataSource] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -32,7 +32,7 @@ const JourneyPage = () => {
   };
 
   const handleRefresh = () => {
-    navigate('/journeys')
+    window.location.reload();
   };
 
   //  Search data from 'Get all Journey list' Api
