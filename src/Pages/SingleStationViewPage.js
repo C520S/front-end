@@ -21,7 +21,7 @@ const SingleStationViewPage = () => {
   const fetchRecords = async (nimi) => {
     try {
       const dataFromApi = await axios.get(
-        `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/stationList/${nimi}`
+        `https://talented-visor-tick.cyclic.app/api/v1/stationList/${nimi}`
       );
 
       const singleStationData = dataFromApi.data.singleStationViewData;

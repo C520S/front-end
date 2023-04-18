@@ -33,7 +33,7 @@ const StationListPage = () => {
       setLoading(true);
 
       const dataFromApi = await axios.get(
-        `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/stationList?page=${page}&search=${search}`
+        `https://talented-visor-tick.cyclic.app/api/v1/stationList?page=${page}&search=${search}`
       );
 
       const stationListData = dataFromApi.data.data.stationListData;
@@ -53,7 +53,7 @@ const StationListPage = () => {
   const fetchRecords = async (page) => {
     try {
       const dataFromApi = await axios.get(
-        `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/stationList?page=${page}`
+        `https://talented-visor-tick.cyclic.app/api/v1/stationList?page=${page}`
       );
 
       const stationListData = dataFromApi.data.data.stationListData;

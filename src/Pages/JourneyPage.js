@@ -45,7 +45,7 @@ const JourneyPage = () => {
       setLoading(true);
 
       const dataFromApi = await axios.get(
-        `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/journeys?page=${page}&search=${search}`
+        `https://talented-visor-tick.cyclic.app/api/v1/journeys?page=${page}&search=${search}`
       );
 
       const journeysData = dataFromApi.data.data.journeysData;
@@ -66,7 +66,7 @@ const JourneyPage = () => {
   const fetchRecords = async (page) => {
     try {
       const dataFromApi = await axios.get(
-        `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/journeys?page=${page}`
+        `https://talented-visor-tick.cyclic.app/api/v1/journeys?page=${page}`
       );
 
       const journeysData = dataFromApi.data.data.journeysData;
