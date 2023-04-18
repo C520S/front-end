@@ -14,7 +14,7 @@ const StationListPage = () => {
   const pageSize = 10;
   const [stationListDataSource, setStationListDataSource] = useState([]);
   const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [searchingValue, setSearchingValue] = useState("");
 
@@ -52,9 +52,7 @@ const StationListPage = () => {
 
   const fetchRecords = async (page) => {
     try {
-      setLoading(true);
-
-      const dataFromApi = await axios.get(
+    const dataFromApi = await axios.get(
         `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/stationList?page=${page}`
       );
 
@@ -129,7 +127,6 @@ const StationListPage = () => {
         a.adress && b.adress && a.adress.localeCompare(b.adress),
     },
   ];
-
   return (
     <>
       <Layout style={{ height: "100vh" }}>

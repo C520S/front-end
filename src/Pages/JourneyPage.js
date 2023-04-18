@@ -14,7 +14,7 @@ const JourneyPage = () => {
   const pageSize = 15;
   const [journeyDataSource, setJourneyDataSource] = useState([]);
   const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [searchingValue, setSearchingValue] = useState("");
 
@@ -64,7 +64,7 @@ const JourneyPage = () => {
 
   const fetchRecords = async (page) => {
     try {
-      setLoading(true);
+     
 
       const dataFromApi = await axios.get(
         `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/journeys?page=${page}`
@@ -75,7 +75,6 @@ const JourneyPage = () => {
       const totalPages = dataFromApi.data.data.totalPages;
       const totalPNumofData = totalPages * pageSize;
       setJourneyDataSource(journeysData);
-      console.log(totalPages);
       setTotal(totalPNumofData);
     } catch (error) {
       alert(
