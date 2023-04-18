@@ -52,7 +52,7 @@ const StationListPage = () => {
 
   const fetchRecords = async (page) => {
     try {
-    const dataFromApi = await axios.get(
+      const dataFromApi = await axios.get(
         `https://calm-jade-greyhound-yoke.cyclic.app/api/v1/stationList?page=${page}`
       );
 
@@ -162,6 +162,9 @@ const StationListPage = () => {
             <div></div>
           )}
           <Table
+           style={{
+            boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)",
+          }}
             loading={loading}
             columns={columns}
             dataSource={stationListDataSource}
@@ -177,7 +180,9 @@ const StationListPage = () => {
               },
             }}
           ></Table>
-
+           <Divider
+            style={{ borderStyle: "none", borderColor: "transparent" }}
+          />
           <Text italic type="secondary" style={{ textAlign: "center" }}>
             @Data is owned by City Bike Finland
           </Text>
