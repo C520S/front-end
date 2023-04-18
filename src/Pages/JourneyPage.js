@@ -13,7 +13,6 @@ const JourneyPage = () => {
   const { Text } = Typography;
   const pageSize = 15;
 
-  
   const [journeyDataSource, setJourneyDataSource] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);

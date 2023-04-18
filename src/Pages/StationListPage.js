@@ -162,9 +162,9 @@ const StationListPage = () => {
             <div></div>
           )}
           <Table
-           style={{
-            boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)",
-          }}
+            style={{
+              boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)",
+            }}
             loading={loading}
             columns={columns}
             dataSource={stationListDataSource}
@@ -180,7 +180,7 @@ const StationListPage = () => {
               },
             }}
           ></Table>
-           <Divider
+          <Divider
             style={{ borderStyle: "none", borderColor: "transparent" }}
           />
           <Text italic type="secondary" style={{ textAlign: "center" }}>
