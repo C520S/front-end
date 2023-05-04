@@ -9,7 +9,7 @@ import pandaBike4 from "../Images/pandaBike4.jpeg";
 const CarouselForHome = () => {
   return (
     <>
-      <Carousel autoplay dotPosition="top" autoplaySpeed={2000}>
+      <Carousel autoplay dotPosition="top" autoplaySpeed={2000} id="panda-carousel">
         <div>
           <Image
             src={pandaBike1}
