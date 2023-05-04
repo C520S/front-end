@@ -8,8 +8,8 @@ import pandaBike4 from "../Images/pandaBike4.jpeg";
 
 const CarouselForHome = () => {
   return (
-    <>
-      <Carousel autoplay dotPosition="top" autoplaySpeed={2000} id="panda-carousel">
+    <div id="panda-carousel">
+      <Carousel autoplay dotPosition="top" autoplaySpeed={2000} >
         <div>
           <Image
             src={pandaBike1}
@@ -39,7 +39,7 @@ const CarouselForHome = () => {
           />
         </div>
       </Carousel>
-    </>
+    </div>
   );
 };
 export default CarouselForHome;
