@@ -140,6 +140,7 @@ const StationListPage = () => {
               enterButton="Search"
               size="large"
               onSearch={onSearch}
+              id="my-search"
             />
           ) : (
             <div></div>
