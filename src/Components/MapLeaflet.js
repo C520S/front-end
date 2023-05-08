@@ -19,6 +19,7 @@ const MapLeaflet = (props) => {
         display: "flex",
         justifyContent: "center",
       }}
+      id="panda-map"
     >
       <MapContainer
         center={mapCenter}
