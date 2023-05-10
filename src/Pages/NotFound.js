@@ -40,6 +40,7 @@ const NotFound = () => {
           src={panda404}
           alt="404page"
           style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+          id="panda404"
         />
         <Title type="danger">404 </Title>
         <Title level={2}>Page Not Found </Title>
