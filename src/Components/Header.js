@@ -30,7 +30,7 @@ const Header = () => {
               icon: <RadarChartOutlined />,
             },
             {
-              label: "Stations",
+              label: "Station List",
               key: "/stationList",
               icon: <BarChartOutlined />,
             },
